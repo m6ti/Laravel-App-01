@@ -8,15 +8,16 @@ use Illuminate\Database\Eloquent\Model;
 class Hashtag extends Model
 {
     use HasFactory;
-    protected $table = 'job_listings';
+
+    protected $table = 'hashtags';
 
     public function posts()
     {
-        return $this->belongsToMany(Post::class);
+        return $this->belongsToMany(Post::class, 'post_hashtag');
     }
 
     public function comments()
     {
-        return $this->belongsToMany(Comment::class);
+        return $this->belongsToMany(Comment::class, 'comment_hashtag');
     }
 }

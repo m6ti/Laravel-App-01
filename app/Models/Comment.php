@@ -16,6 +16,6 @@ class Comment extends Model
 
     public function hashtags()
     {
-        return $this->belongsToMany(Hashtag::class);
+        return $this->belongsToMany(Hashtag::class, 'comment_hashtag');
     }
 }
